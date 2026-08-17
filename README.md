@@ -1,8 +1,8 @@
-# ☕ Website Gọi Món & Quản Lý Đặt Bàn Cho Quán Cafe
+#  Website Gọi Món & Quản Lý Đặt Bàn Cho Quán Cafe
 
 Đồ án hệ thống gọi món (POS) và quản lý đặt bàn cho quán cafe, kiến trúc **Backend - Frontend tách biệt**, giao tiếp qua RESTful API, bảo mật bằng JWT.
 
-## 🏗️ Kiến trúc
+##  Kiến trúc
 
 ```
 cafe-management-system/
