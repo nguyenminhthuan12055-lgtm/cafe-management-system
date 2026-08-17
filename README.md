@@ -39,7 +39,7 @@ Backend và Frontend là **2 dự án hoàn toàn độc lập** — Frontend kh
 ## ⚙️ Cài đặt & chạy thử (không dùng Docker)
 
 ### 1. Chuẩn bị Database
-Mở SQL Server Management Studio, chạy toàn bộ file `database/CafeManagement.sql` để tạo database + dữ liệu mẫu (bao gồm 8 bàn mẫu, 4 tài khoản mẫu, 17 món ăn/nước uống mẫu).
+Mở SQL Server Management Studio, chạy toàn bộ file `database/CafeManagement.sql` để tạo database + dữ liệu mẫu.
 
 ### 2. Chạy Backend
 ```bash
@@ -56,7 +56,7 @@ Trang đặt bàn công khai cho khách: `frontend/dat-ban.html`.
 ### 4. Xem tài liệu API (Swagger)
 Vào `http://localhost:5000/api-docs`.
 
-## 🐳 Chạy bằng Docker (khuyến khích — đáp ứng yêu cầu "Dockerize toàn bộ ứng dụng")
+##  Chạy bằng Docker (khuyến khích — đáp ứng yêu cầu "Dockerize toàn bộ ứng dụng")
 
 ```bash
 docker-compose up --build
@@ -67,22 +67,12 @@ docker-compose up --build
 
 > **Lưu ý:** cấu hình mẫu trong `docker-compose.yml` kết nối tới SQL Server đang chạy **ngay trên máy thật** của bạn (`host.docker.internal`), không phải SQL Server chạy trong Docker. Nếu muốn SQL Server cũng chạy trong container, cần thêm 1 service `sqlserver` vào `docker-compose.yml` (image `mcr.microsoft.com/mssql/server`) và đổi `DB_SERVER` tương ứng.
 
-## 🔑 Tài khoản mẫu (từ `CafeManagement.sql`)
+##  Tài khoản mẫu 
 
 | Username | Password | Role |
 |---|---|---|
 | admin@gmail.com | 123456 | Admin |
 | staff1@gmail.com | 123456 | Staff |
 
-(2 tài khoản còn lại trong file SQL dùng mật khẩu riêng của thành viên nhóm.)
 
-## 👥 Ghi chú cho cả nhóm khi làm việc chung trên GitHub
 
-Để đáp ứng yêu cầu "Github có sự đóng góp thường xuyên - đều đặn của tất cả thành viên":
-- Mỗi thành viên nên tạo nhánh riêng (`git checkout -b ten-thanh-vien/tinh-nang`) khi làm tính năng mới, rồi tạo Pull Request để merge vào `main`, thay vì tất cả cùng push thẳng vào `main`.
-- Commit nhỏ, thường xuyên, message rõ ràng (vd: `feat: them chuc nang dat ban cho khach`) thay vì 1 commit khổng lồ cuối kỳ — giảng viên thường xem lịch sử commit (`git log`, tab Insights > Contributors trên GitHub) để đánh giá mức đóng góp từng người.
-- Phân chia rõ: người phụ trách backend, người phụ trách frontend, người viết tài liệu/README, để mỗi người đều có commit đứng tên mình trong suốt quá trình làm, không dồn vào 1-2 buổi cuối.
-
-## ⚠️ Bảo mật
-
-File `backend/.env` chứa mật khẩu database và khóa bí mật JWT — **không được commit lên GitHub** (đã có sẵn trong `.gitignore`). Trước khi `git push`, luôn chạy `git status` để chắc chắn `.env` không nằm trong danh sách file được commit.
